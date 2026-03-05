@@ -3,7 +3,8 @@ import TaskList from './components/TaskList'
 import TaskForm from './components/TaskForm'
 import './App.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE 
+const API_BASE = import.meta.env.VITE_API_BASE || 
+"https://task-manager-docker-app-2.onrender.com/api/tasks"
 function App() {
   const [tasks, setTasks] = useState([])
   const [editingTask, setEditingTask] = useState(null)
@@ -24,7 +25,7 @@ function App() {
       setError(null)
     } catch (err) {
       const msg = err.message.includes('Failed to fetch') || err.message.includes('Load failed')
-        ? 'Cannot reach backend. Ensure backend is running on port 9064 and frontend uses npm run dev.'
+        ? 'Cannot reach backend. Ensure backend is running on port 8080 and frontend uses npm run dev.'
         : err.message
       setError(msg)
       setTasks([])
