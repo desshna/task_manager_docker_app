@@ -1,0 +1,178 @@
+.task-form-section {
+  background: var(--color-bg-elevated);
+  border: 2px solid rgba(244, 114, 182, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md), 0 0 40px rgba(244, 114, 182, 0.08);
+  backdrop-filter: blur(20px);
+  animation: formSlideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+  transition: box-shadow var(--transition-normal);
+}
+
+.task-form-section:hover {
+  box-shadow: var(--shadow-md), 0 0 50px rgba(244, 114, 182, 0.12);
+}
+
+.task-form-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-form-section h2::before {
+  content: '';
+  width: 5px;
+  height: 1.3em;
+  background: linear-gradient(180deg, #f472b6 0%, #a78bfa 50%, #22d3ee 100%);
+  border-radius: 6px;
+  animation: barPulse 2s ease-in-out infinite;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.875rem 1.125rem;
+  background: var(--color-bg-input);
+  border: 2px solid rgba(167, 139, 250, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-dim);
+  opacity: 0.8;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: rgba(244, 114, 182, 0.4);
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.1);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2);
+  animation: inputGlow 2s ease-in-out infinite;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  flex-direction: row;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f472b6 0%, #a78bfa 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(244, 114, 182, 0.4);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(244, 114, 182, 0.5);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btn-secondary {
+  background: rgba(167, 139, 250, 0.2);
+  color: var(--color-text);
+  border: 2px solid rgba(167, 139, 250, 0.4);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(167, 139, 250, 0.3);
+  border-color: rgba(167, 139, 250, 0.6);
+  transform: translateY(-2px);
+}
+
+@keyframes formSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes barPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes inputGlow {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.2); }
+  50% { box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.1); }
+}

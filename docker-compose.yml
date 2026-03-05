@@ -1,0 +1,15 @@
+
+services:
+  backend:
+    build: ./backend
+    container_name: java_backend
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./frontend
+    container_name: react_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend

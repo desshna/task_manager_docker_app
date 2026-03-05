@@ -1,0 +1,7 @@
+com\crud\taskmanager\TaskManagerApplication.class
+com\crud\taskmanager\controller\TaskController.class
+com\crud\taskmanager\service\TaskService.class
+com\crud\taskmanager\repository\TaskRepository.class
+com\crud\taskmanager\controller\GlobalExceptionHandler.class
+com\crud\taskmanager\config\WebConfig.class
+com\crud\taskmanager\model\Task.class
