@@ -3,8 +3,7 @@ import TaskList from './components/TaskList'
 import TaskForm from './components/TaskForm'
 import './App.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 
-"https://task-manager-docker-app-2.onrender.com/api/tasks"
+const API_BASE = "https://task-manager-docker-app-2.onrender.com/api/tasks"
 function App() {
   const [tasks, setTasks] = useState([])
   const [editingTask, setEditingTask] = useState(null)
