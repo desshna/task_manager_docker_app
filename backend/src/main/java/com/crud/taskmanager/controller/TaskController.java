@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/tasks")
 @CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173", "https://task-manager-docker-app-3.onrender.com/"}, allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class TaskController {
 
