@@ -123,7 +123,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <span>Made with React & Spring Boot</span>
+        <span>Organize Tasks. Achieve More.</span>
       </footer>
     </div>
   )
